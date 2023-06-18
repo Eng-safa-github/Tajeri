@@ -1,5 +1,4 @@
-@extends('layouts.contentLayoutMaster')
-@section('content')
+<?php $__env->startSection('content'); ?>
     <!-- Content wrapper -->
     <div class="content-wrapper">
         <div class="container-xxl flex-grow-1 container-p-y">
@@ -22,15 +21,17 @@
             </div>
 
             <!-- BEGIN: Modal-->
-            @include('categories.add')
-            @include('categories.edit')
-            @include('categories.delete')
+            <?php echo $__env->make('categories.add', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+            <?php echo $__env->make('categories.edit', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+            <?php echo $__env->make('categories.delete', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
             <!-- END: Modal-->
 
             <div class="content-backdrop fade"></div>
         </div>
         <!-- Content wrapper -->
-        @push('scripts')
-            <script src="{{asset('js/categories.js')}}"></script>
-    @endpush
-@endsection
+        <?php $__env->startPush('scripts'); ?>
+            <script src="<?php echo e(asset('js/categories.js')); ?>"></script>
+    <?php $__env->stopPush(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.contentLayoutMaster', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\laravelProjects\Tajeri-web\resources\views/categories/view.blade.php ENDPATH**/ ?>

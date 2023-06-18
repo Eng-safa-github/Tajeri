@@ -13,7 +13,7 @@ class ProductCategoryController extends Controller
 {
     public function index()
     {
-        $model = ProductCategory::query();
+        $model = ProductCategory::orderBy('id','DESC');
         return DataTables::of($model)->toJson();
     }
 

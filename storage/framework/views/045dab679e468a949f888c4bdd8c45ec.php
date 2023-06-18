@@ -29,4 +29,4 @@
         </div>
     </div>
 </div>
-<?php /**PATH D:\laravelProjects\newProject\resources\views/products/delete.blade.php ENDPATH**/ ?>
+<?php /**PATH D:\laravelProjects\Tajeri-web\resources\views/categories/delete.blade.php ENDPATH**/ ?>

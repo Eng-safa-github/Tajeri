@@ -29,4 +29,4 @@
         </div>
     </div>
 </div>
-<?php /**PATH E:\stock\newProject\resources\views/products/stop.blade.php ENDPATH**/ ?>
+<?php /**PATH E:\stock\newProject\resources\views/products/delete.blade.php ENDPATH**/ ?>

@@ -5,7 +5,8 @@
     </div>
     <div class="offcanvas-body">
         <form class="pt-0" id="editCategoryForm" onsubmit="return false" enctype="multipart/form-data" method="post">
-            {{ method_field('PUT') }}
+            <?php echo e(method_field('PUT')); ?>
+
             <input type="hidden" id="categoryId-edit" name="id"/>
             <div class="mb-3">
                 <label class="form-label" for="categoryName-edit">الاسم</label>
@@ -16,3 +17,4 @@
         </form>
     </div>
 </div>
+<?php /**PATH D:\laravelProjects\Tajeri-web\resources\views/categories/edit.blade.php ENDPATH**/ ?>

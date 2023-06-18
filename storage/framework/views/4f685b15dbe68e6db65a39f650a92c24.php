@@ -15,3 +15,4 @@
         </form>
     </div>
 </div>
+<?php /**PATH D:\laravelProjects\Tajeri-web\resources\views/categories/add.blade.php ENDPATH**/ ?>

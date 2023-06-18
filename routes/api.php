@@ -35,7 +35,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('products', ProductController::class)->except('destroy');
 Route::put('products/{product}/changeStatus', [ProductController::class, 'changeStatus']);
 
-Route::resource('categories', ProductCategoryController::class);
+Route::resource('categories', ProductCategoryController::class, ['parameters' => ['categories' => 'productCategory']]);
 Route::resource('stores', StoreController::class);
 //Route::resource('roles',RoleController::class);
 Route::resource('users', UserController::class);

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\PermissionEnum;
 use App\Http\Resources\ProductResource;
 use App\Models\Product;
 use App\Http\Requests\StoreProductRequest;
@@ -18,6 +19,7 @@ class ProductController extends Controller
 
     public function __construct(public ProductService $productService)
     {
+//        $this->middleware(["permission:" . PermissionEnum::PRODUCTS->value])->only(['index','store', 'show','update','destroy']);
 
     }
     public function index(Request $request)

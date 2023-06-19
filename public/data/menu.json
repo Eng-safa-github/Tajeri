@@ -5,6 +5,7 @@
             "name": "الصفحة الرئيسية",
             "slug": "home",
             "icon": "bx-home-circle",
+            "permission" : "عرض التقارير",
             "tag": "2",
             "tagcustom": "badge badge-light-danger badge-pill badge-round float-right mr-50",
             "submenu": [
@@ -21,6 +22,7 @@
             "name": "الطلبات",
             "slug": "orders",
             "icon": "bx-layout",
+            "permission" : "عرض الطلبات",
             "submenu": [
                 {
                     "url": "orders",
@@ -35,6 +37,7 @@
             "name": "الفواتير",
             "slug": "invoice",
             "icon": "bx-layout",
+            "permission" : "الفواتير",
             "submenu": [
                 {
                     "url": "app/invoice/list",
@@ -49,6 +52,7 @@
             "name": "المنتجات",
             "slug": "products",
             "icon": "bx-layout",
+            "permission" : "المنتجات",
             "submenu": [
                 {
                     "url": "categories",
@@ -68,6 +72,7 @@
             "url": "#",
             "name": "المخازن",
             "slug": "stores",
+            "permission": "المخازن",
             "icon": "bx-layout",
             "submenu": [
                 {
@@ -82,6 +87,7 @@
             "url": "#",
             "name": "المستخدمين",
             "slug": "users",
+            "permission": "المستخدمين",
             "icon": "bx-layout",
             "submenu": [
                 {
@@ -102,6 +108,7 @@
             "url": "#",
             "name": "الاشعارات",
             "slug": "invoice",
+            "permission": "الاشعارات",
             "icon": "bx-layout",
             "submenu": [
                 {
@@ -116,6 +123,7 @@
             "url": "#",
             "name": "العروض",
             "slug": "invoice",
+            "permission": "العروض",
             "icon": "bx-layout",
             "submenu": [
                 {

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\PermissionEnum;
 use App\Http\Resources\StoreResource;
 use App\Models\Store;
 use App\Http\Requests\StoreStoreRequest;
@@ -14,6 +15,7 @@ class StoreController extends Controller
 {
     public function __construct(public StoreService $storeService)
     {
+//        $this->middleware(["permission:" . PermissionEnum::STORE->value])->only(['index','store', 'show','update','destroy']);
 
     }
     public function index()

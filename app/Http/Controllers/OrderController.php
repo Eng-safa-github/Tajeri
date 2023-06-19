@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\PermissionEnum;
 use App\Http\Resources\OrderResource;
 use App\Models\Order;
 use App\Http\Requests\StoreOrderRequest;
@@ -11,6 +12,8 @@ class OrderController extends Controller
 {
     public function __construct(public OrderService $orderService)
     {
+//        $thٍٍis->middleware(["permission:" . PermissionEnum::SHOW_ORDERS->value])->only(['index', 'show','store']);
+
     }
 
     /**

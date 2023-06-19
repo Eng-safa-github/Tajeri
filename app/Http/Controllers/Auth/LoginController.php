@@ -4,11 +4,13 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginRequest;
+use App\Http\Requests\RegisterRequest;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
@@ -58,6 +60,14 @@ class LoginController extends Controller
             'data' => $user,
             'token' => $token->plainTextToken
         ]);
+    }
+
+    public function register(RegisterRequest $request)
+    {
+        $data=$request->validated();
+        $data["password"]=Hash::make($data["password"]);
+        $user = User::create($data);
+        return response()->json(['message' => 'User registered successfully']);
     }
 
 

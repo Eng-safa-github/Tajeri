@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\PermissionEnum;
 use App\Http\Resources\OrderResource;
 use App\Models\Order;
 use App\Http\Requests\UpdateOrderRequest;
@@ -12,7 +13,7 @@ class OrderDashboardController extends Controller
 {
     public function __construct(public OrderService $orderService)
     {
-//        $this->middleware(["permission:تعديل الطلب"])->only(['update']);
+//        $this->middleware(["permission:" . PermissionEnum::SHOW_ORDERS->value])->only(['index', 'show','update','destroy']);
     }
 
     public function index()

@@ -2,15 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use DB;
-use Hash;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 
 
-use App\Http\Requests\StoreUserRequest;
-use App\Http\Requests\UpdateUserRequest;
 use Illuminate\Support\Facades\Log;
 use Yajra\DataTables\DataTables;
 class UserController extends Controller
@@ -31,7 +27,7 @@ class UserController extends Controller
 
 
 
-            
+
     }
 
     /**
@@ -42,7 +38,7 @@ class UserController extends Controller
         //
         $roles = Role::pluck('name','name')->all();
         return view('users.add_user',compact('roles'));
-        
+
     }
 
     /**
@@ -90,7 +86,7 @@ class UserController extends Controller
        return view('users.edit',compact('user','roles','userRole'));
 
 
-      
+
     }
 
     /**

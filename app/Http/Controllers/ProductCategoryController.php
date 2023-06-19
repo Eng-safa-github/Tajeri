@@ -2,15 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\PermissionEnum;
 use App\Http\Resources\ProductCategoryResource;
 use App\Models\Product;
 use App\Models\ProductCategory;
 use App\Http\Requests\StoreProductCategoryRequest;
 use App\Http\Requests\UpdateProductCategoryRequest;
+use App\Services\OrderService;
 use Yajra\DataTables\DataTables;
 
 class ProductCategoryController extends Controller
 {
+    public function __construct(public OrderService $orderService)
+    {
+//        $this->middleware(["permission:" . PermissionEnum::CATEGORIES->value])->only(['index','store', 'show','update','destroy']);
+    }
     public function index()
     {
         $model = ProductCategory::orderBy('id','DESC');

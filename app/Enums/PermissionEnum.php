@@ -5,6 +5,7 @@ namespace App\Enums;
 enum PermissionEnum: string
 {
     // Invoices
+    case VIEW_DASHBOARD = 'عرض التقارير';
     case INVOICES = 'الفواتير';
     case INVOICES_LIST = 'قائمة الفواتير';
     case PAID_INVOICES = 'الفواتير المدفوعة';
@@ -55,6 +56,8 @@ enum PermissionEnum: string
     case EDIT_PRODUCT = 'تعديل منتج';
     case DELETE_PRODUCT = 'حذف منتج';
 
+    case STORE = 'المخازن';
+
     // Category Actions
     case ADD_CATEGORY = 'اضافة قسم';
     case EDIT_CATEGORY = 'تعديل قسم';
@@ -64,5 +67,6 @@ enum PermissionEnum: string
     case NOTIFICATIONS = 'الاشعارات';
 
     // Order Actions
+    case SHOW_ORDERS = 'عرض الطلبات';
     case EDIT_ORDER = 'تعديل الطلب';
 }

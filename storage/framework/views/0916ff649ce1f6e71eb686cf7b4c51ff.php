@@ -32,6 +32,7 @@
         </div>
         <!-- Content wrapper -->
         <?php $__env->startPush('scripts'); ?>
+            <script src="<?php echo e(asset('js/user.js')); ?>"></script>
             <script src="<?php echo e(asset('js/products.js')); ?>"></script>
     <?php $__env->stopPush(); ?>
 <?php $__env->stopSection(); ?>

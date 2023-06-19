@@ -3,12 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\LoginRequest;
-use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -42,23 +38,11 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    protected function credentials(Request $request)
+      protected function credentials(\Illuminate\Http\Request $request)
     {
         return ['email' => $request->email, 'password' => $request->password, 'status' => 'active'];
     }
 
-    public function login(LoginRequest $request)
-    {
-        $user = User::firstWhere(['email' => $request->email]);
-        if (!$user || !Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-            return response(["message" => "The email or password is incorrect"], 404);
-        }
-        $token = $user->createToken('web');
-        return response([
-            'data' => $user,
-            'token' => $token->plainTextToken
-        ]);
-    }
-
-
+    
+    
 }

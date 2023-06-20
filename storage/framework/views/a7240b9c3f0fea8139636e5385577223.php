@@ -21,6 +21,7 @@
 <link rel="stylesheet" href="<?php echo e(asset('css/custom-style.css')); ?>" />
 
 <!-- Page CSS -->
+<?php echo $__env->yieldPushContent('styles'); ?>
 
 <!-- Helpers -->
 <script src="<?php echo e(asset('assets/vendor/js/helpers.js')); ?>"></script>

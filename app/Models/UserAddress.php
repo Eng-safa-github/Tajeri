@@ -10,15 +10,19 @@ use MatanYadaev\EloquentSpatial\Objects\Point;
 class UserAddress extends Model
 {
     use SoftDeletes,HasFactory;
+
     protected $fillable = [
         'id','address','location', 'user_id',
     ];
+
     protected $casts = [
         'location' => Point::class,
     ];
+
     public function user(){
         return $this->belongsTo(User::class);
     }
+
     public function orders(){
         return $this->hasMany(Order::class);
     }

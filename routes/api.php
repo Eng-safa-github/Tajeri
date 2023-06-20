@@ -23,9 +23,28 @@ use App\Http\Controllers\UserAddressController;
 */
 Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::resource('addresses', UserAddressController::class, ['parameters' => ['addresses' => 'userAddress']]);
-    Route::resource('orders', OrderController::class)->except(['update','destroy']);
-    Route::resource('dashboard-orders', OrderDashboardController::class, ['parameters' => ['dashboard-orders' => 'order']])->except(['store']);
+    // Route::resource('orders', OrderController::class)->except(['update','destroy']);
+
+
+     /*-------------------------- Orders Routes  ---------------------------*/
+     Route::group(['prefix' => 'orders', 'as' => 'orders.'], function () {
+        Route::get('create', [OrderController::class, 'create'])->name('create');
+        Route::post('store', [OrderController::class, 'store'])->name('store');
+        Route::get('edit/{order}', [OrderController::class, 'edit'])->name('edit');
+        Route::put('update/{order}', [OrderController::class, 'update'])->name('update');
+        Route::delete('delete/{order}', [OrderController::class, 'delete'])->name('delete');
+
+    });
+
 });
+
+Route::resource('dashboard-orders', OrderDashboardController::class, ['parameters' => ['dashboard-orders' => 'order']])->except(['store']);
+
+
+
+// Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
+
+
 Route::get('mobile/products', MobileStoreController::class);
 
 
@@ -37,9 +56,6 @@ Route::put('products/{product}/changeStatus', [ProductController::class, 'change
 
 Route::resource('categories', ProductCategoryController::class, ['parameters' => ['categories' => 'productCategory']]);
 Route::resource('stores', StoreController::class);
-//Route::resource('roles',RoleController::class);
-Route::resource('users', UserController::class);
-
 
 Route::post('login', [LoginController::class,"login"]);
 Route::post('register', [LoginController::class,"register"]);

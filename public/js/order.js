@@ -45,8 +45,7 @@ function getOrders() {
     if ($.fn.DataTable.isDataTable("#orderDatatable")) {
         $("#orderDatatable").DataTable().ajax.reload();
     } else {
-        var token = localStorage.getItem('token');
-        console.log("token: "+token);
+      
         $("#orderDatatable").DataTable({
             processing: true,
             serverSide: true,
@@ -59,14 +58,14 @@ function getOrders() {
                 '<"col-sm-12 col-md-6"f>>' +
                 '<"row"<"col-sm-12"tr>><"row"<"col-sm-12 col-md-5"i><"col-sm-12 col-md-7"p>>',
             buttons: [
-                {
-                    text: '<i class="bx bx-plus me-sm-2"></i><span class="d-none d-sm-inline-block">إضافة طلب</span>',
-                    className: "dt-button create-new btn btn-primary m-2",
-                    action: function (e, dt, node, config) {
-                        showOffcanvasToAddProduct();
-                    },
-                    enabled: false, // Add this line to disable the button
-                },
+                // {
+                //     text: '<i class="bx bx-plus me-sm-2"></i><span class="d-none d-sm-inline-block">إضافة طلب</span>',
+                //     className: "dt-button create-new btn btn-primary m-2",
+                //     action: function (e, dt, node, config) {
+                //         showOffcanvasToAddProduct();
+                //     },
+                //     enabled: false, // Add this line to disable the button
+                // },
                 {
                     extend: "collection",
                     className: 'class="dt-button buttons-collection btn btn-label-primary dropdown-toggle me-2"',
@@ -117,9 +116,7 @@ function getOrders() {
             ],
             "ajax": {
                 "url": '/api/dashboard-orders',
-                "headers": {
-                    'Authorization': 'Bearer '+token,
-                },
+           
                 "type": "GET",
                 "datatype": "json"
             },
@@ -246,7 +243,6 @@ function showMap(orderId) {
             console.error('Error:', error);
         });
 }
-
 
 function showOrderProductsModal(orderStoreData) {
     // Get a reference to the modal

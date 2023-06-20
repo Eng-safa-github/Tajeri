@@ -55,12 +55,24 @@ class LoginController extends Controller
         if (!$user || !Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             return response(["message" => "The email or password is incorrect"], 404);
         }
-        $token = $user->createToken('web');
-        return response([
-            'data' => $user,
-            'token' => $token->plainTextToken
-        ]);
+
+            if (str_starts_with(url()->current(), config('app.url'))) {
+                return redirect(route('dashboard.view'));
+            }
+            else{
+                $token = $user->createToken('web');
+                return response([
+                    'data' => $user,
+                    'token' => $token->plainTextToken
+                ]);
+            }
+     
     }
+
+
+
+
+
 
     public function register(RegisterRequest $request)
     {

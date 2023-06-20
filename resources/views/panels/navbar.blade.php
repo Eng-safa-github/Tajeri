@@ -24,12 +24,12 @@
                 <!-- Language -->
                 <li class="nav-item dropdown-language dropdown me-2 me-xl-0">
                     <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
-                        <i class="flag-icon flag-icon-us flag-icon-squared fs-3 rounded-circle me-1"></i>
+                        <i class="flag-icon flag-icon-ye flag-icon-squared fs-3 rounded-circle me-1"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
                         <li>
                             <a class="dropdown-item" href="javascript:void(0);" data-language="en">
-                                <i class="flag-icon flag-icon-us flag-icon-squared fs-4 rounded-circle me-1"></i>
+                                <i class="flag-icon flag-icon-ye flag-icon-squared fs-4 rounded-circle me-1"></i>
                                 <span class="align-middle">English</span>
                             </a>
                         </li>

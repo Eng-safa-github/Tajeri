@@ -21,6 +21,7 @@
 <link rel="stylesheet" href="{{asset('css/custom-style.css')}}" />
 
 <!-- Page CSS -->
+@stack('styles')
 
 <!-- Helpers -->
 <script src="{{asset('assets/vendor/js/helpers.js')}}"></script>

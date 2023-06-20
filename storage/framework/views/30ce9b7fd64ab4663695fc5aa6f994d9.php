@@ -53,7 +53,7 @@
                   </g>
                 </svg>
               </span>
-            <span class="app-brand-text demo menu-text fw-bold ms-2">Frest</span>
+            <span class="app-brand-text demo menu-text fw-bold ms-2">جملتي</span>
         </a>
 
         <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
@@ -66,17 +66,97 @@
 
     <div class="menu-inner-shadow"></div>
     <ul class="menu-inner py-1">
-        <?php $__currentLoopData = $menuData->menu; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $menu): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <li class="menu-item <?php echo e(in_array($menu->slug, explode('-',Route::currentRouteName()))? 'open' : ''); ?>">
-                <a href="<?php echo e(asset($menu->url)); ?>" class="menu-link menu-toggle">
-                    <i class="menu-icon tf-icons bx <?php echo e($menu->icon); ?>"></i>
-                    <div><?php echo e($menu?->name??""); ?></div>
-                </a>
-                <?php echo $__env->make('panels.sidebar-submenu',['menu' => $menu->submenu], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-            </li>
-        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+        <!-- Page -->
+        <?php if( auth()->user()->can('عرض الكل-لوحة_التحكم') ): ?>
 
+            <li class="menu-item ">
+                <a href="#dashboard" class="menu-link menu-toggle">
+                    <i class="menu-icon tf-icons bx bx-credit-card-front"></i>
+                    <div>الصفحة الرئيسيه</div>
+                </a>
+                <ul class="menu-sub" id="dashboard">
+                    <li class="menu-item">
+                        <a href="<?php echo e(route('home')); ?>" class="menu-link">
+                            <div> لوحة التحكم</div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        <?php endif; ?>
+
+        <?php if( auth()->user()->can('عرض الكل-الطلبات') ): ?>
+            <li class="menu-item ">
+                <a href="#orders" class="menu-link menu-toggle">
+                    <i class="menu-icon tf-icons bx bx-credit-card-front"></i>
+                    <div>الطلبات</div>
+                </a>
+                <ul class="menu-sub" id="orders">
+                    <li class="menu-item">
+                        <a href="<?php echo e(route('orders.index')); ?>" class="menu-link">
+                            <div> ادارة الطلبات</div>
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+        <?php endif; ?>
+
+        <?php if( auth()->user()->can('عرض الكل-المنتجات') ): ?>
+            <li class="menu-item ">
+                <a href="#products" class="menu-link menu-toggle">
+                    <i class="menu-icon tf-icons bx bx-credit-card-front"></i>
+                    <div>المنتجات</div>
+                </a>
+                <ul class="menu-sub" id="products">
+                    <li class="menu-item">
+                        <a href="<?php echo e(route('products.index')); ?>" class="menu-link">
+                            <div> ادارة المنتجات</div>
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+        <?php endif; ?>
+
+        <?php if( auth()->user()->can('عرض الكل-المخازن') ): ?>
+            <li class="menu-item ">
+                <a href="#stores" class="menu-link menu-toggle">
+                    <i class="menu-icon tf-icons bx bx-credit-card-front"></i>
+                    <div>المخازن</div>
+                </a>
+                <ul class="menu-sub" id="stores">
+                    <li class="menu-item">
+                        <a href="<?php echo e(route('stores.index')); ?>" class="menu-link">
+                            <div> ادارة المخازن</div>
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+        <?php endif; ?>
+        <?php if( auth()->user()->can('عرض الكل-المستخدمين')  || auth()->user()->can('عرض الكل-الصلاحيات') ): ?>
+            <li class="menu-item ">
+                <a href="#users" class="menu-link menu-toggle">
+                    <i class="menu-icon tf-icons bx bx-credit-card-front"></i>
+                    <div>المستخدمين</div>
+                </a>
+                <ul class="menu-sub" id="users">
+                    <li class="menu-item">
+                        <a href="<?php echo e(route('users.index')); ?>" class="menu-link">
+                            <div> ادارة المستخدمين</div>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="<?php echo e(route('roles.index')); ?>" class="menu-link">
+                            <div> ادارة الادوار</div>
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+        <?php endif; ?>
     </ul>
+
 </aside>
 <!-- / Menu -->
 <?php /**PATH E:\tajeri\resources\views/panels/sidebar.blade.php ENDPATH**/ ?>

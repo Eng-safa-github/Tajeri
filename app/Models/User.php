@@ -48,11 +48,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
 
     ];
+    const  STATUS = ['active', 'inactive'];
 
 
     public function orders(){
         return $this->hasMany(Order::class);
     }
+    
     public function userAddresses(){
         return $this->hasMany(UserAddress::class);
     }

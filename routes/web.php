@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 
@@ -10,9 +11,14 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
 
 
 
+
+Route::get('/home', function () {
+    return view('dashboard.view');
+})->name('dashboard.view');
 Route::group(['middleware' => ['auth']], function () {
     /*-------------------------- users Routes  ---------------------------*/
     Route::group(['prefix' => 'users', 'as' => 'users.'], function () {
@@ -39,9 +45,7 @@ Route::group(['middleware' => ['auth']], function () {
 
     
 
-        Route::get('/home', function () {
-            return view('dashboard.view');
-        })->name('dashboard.view');
+        
 
         Route::get('/categories', function () {
 

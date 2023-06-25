@@ -2,7 +2,7 @@
 
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
     <div class="app-brand demo">
-        <a href="index.html" class="app-brand-link">
+        <a href="view.html" class="app-brand-link">
               <span class="app-brand-logo demo">
                 <svg
                     width="26px"
@@ -76,7 +76,7 @@
                 </a>
                 <ul class="menu-sub" id="dashboard">
                     <li class="menu-item">
-                        <a href="{{route('home')}}" class="menu-link">
+                        <a href="{{route('dashboard.view')}}" class="menu-link">
                             <div> لوحة التحكم</div>
                         </a>
                     </li>
@@ -92,7 +92,7 @@
                 </a>
                 <ul class="menu-sub" id="orders">
                     <li class="menu-item">
-                        <a href="{{route('orders.index')}}" class="menu-link">
+                        <a href="{{route('orders.view')}}" class="menu-link">
                             <div> ادارة الطلبات</div>
                         </a>
                     </li>
@@ -109,8 +109,16 @@
                 </a>
                 <ul class="menu-sub" id="products">
                     <li class="menu-item">
-                        <a href="{{route('products.index')}}" class="menu-link">
+                        <a href="{{route('products.view')}}" class="menu-link">
                             <div> ادارة المنتجات</div>
+                        </a>
+                    </li>
+
+                </ul>
+                <ul class="menu-sub" id="category">
+                    <li class="menu-item">
+                        <a href="{{route('categories.view')}}" class="menu-link">
+                            <div> ادارة الاصناف</div>
                         </a>
                     </li>
 
@@ -126,7 +134,7 @@
                 </a>
                 <ul class="menu-sub" id="stores">
                     <li class="menu-item">
-                        <a href="{{route('stores.index')}}" class="menu-link">
+                        <a href="{{route('stores.view')}}" class="menu-link">
                             <div> ادارة المخازن</div>
                         </a>
                     </li>

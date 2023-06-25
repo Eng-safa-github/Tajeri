@@ -1,15 +1,16 @@
 <?php
 
-use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\MobileStoreController;
-use App\Http\Controllers\OrderDashboardController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\StoreController;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\ProductCategoryController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\MobileStoreController;
 use App\Http\Controllers\UserAddressController;
+use App\Http\Controllers\OrderDashboardController;
+use App\Http\Controllers\ProductCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,6 +59,5 @@ Route::resource('categories', ProductCategoryController::class, ['parameters' =>
 Route::resource('stores', StoreController::class);
 
 Route::post('login', [LoginController::class,"login"]);
-Route::post('register', [LoginController::class,"register"]);
 
 

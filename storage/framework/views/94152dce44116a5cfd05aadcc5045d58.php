@@ -1,7 +1,5 @@
 <?php $__env->startPush('styles'); ?>
-    <link rel="stylesheet"
-          type="text/css"
-          href="<?php echo e(asset('adminAssets/src/bootstrap/css/bootstrap.min.css')); ?>"/>
+
 
     <link rel="stylesheet"
           type="text/css"
@@ -19,6 +17,7 @@
         <div class="row layout-spacing my-4">
             <div class="col-lg-12">
                 <div class="card ">
+                    
                     <div class="card-header d-flex justify-content-between align-items-center ">
                         <h3 class="text-capitalize text-dark">
                             الادوار
@@ -46,11 +45,24 @@
 
                     </div>
                 </div>
+
             </div>
 
         </div>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+        <div class="content-backdrop fade"></div>
+
     </div>
-    <div class="content-backdrop fade"></div>
+
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startPush('scripts'); ?>

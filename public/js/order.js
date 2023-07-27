@@ -68,9 +68,10 @@ function getOrders() {
                 // },
                 {
                     extend: "collection",
+                    text: '<i class="bx bx-plus me-sm-2"></i><span class="d-none d-sm-inline-block">تصدير</span>',     
                     className: 'class="dt-button buttons-collection btn btn-label-primary dropdown-toggle me-2"',
-                    text: "تصدير",
-                    buttons: [
+                     
+                               buttons: [
                         {
                             extend: "copy",
                             className: "dt-button buttons-print dropdown-item",
@@ -85,6 +86,7 @@ function getOrders() {
                             text: "PDF",
                             exportOptions: {
                                 columns: ":visible",
+                                
                             },
                         },
                         {

@@ -9,9 +9,9 @@
                 <label class="form-label" for="add-product-name">اسم المنتج</label>
                 <input type="text" class="form-control" id="add-product-name" name="name"/>
             </div>
-            <div class="mb-3" id="add-product-category-parent">
-                <label class="form-label" for="category">الأصناف</label>
-                <select id="category" class=" form-select form-control" name="product_category_id"></select>
+            <div class="mb-3" id="product-category-parent">
+                <label class="form-label" for="categories">الأصناف</label>
+                <select id="categories" class=" form-select form-control" name="product_category_id"></select>
                 <label id="category-error" class="error" for="category"></label>
             </div>
 

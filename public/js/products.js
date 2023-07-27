@@ -5,7 +5,7 @@ $(document).ready(function () {
 });
 
 async function showOffcanvasToAddProduct() {
-    await getCategories("#category", "#add-product-category-parent");
+    await getCategories("#categories", "#product-category-parent");
     showOffcanvas("#offcanvasAddProduct");
 }
 
@@ -142,7 +142,7 @@ function getProducts() {
                     searchable: false,
                     orderable: false,
                 },
-                { data: "created_at" },
+                {data: "created_at"},
                 {
                     render: function (data, type, row) {
                         return (

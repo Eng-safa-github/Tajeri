@@ -15,12 +15,12 @@
                     @csrf
                     <div class="card">
                         <div class="card-header">
-                            <h3>Create User</h3>
+                            <h3>انشاء مستخدم</h3>
                         </div>
                         <div class="card-body row">
                             <div class="col-md-6 mb-3">
                                 <div class="form-group ">
-                                    <label for="name" class="col-form-label">User Name</label>
+                                    <label for="name" class="col-form-label">اسم المستخدم</label>
                                     <input class="form-control @error('username') is-invalid @enderror"
                                            name="username"
                                            type="text"
@@ -36,7 +36,7 @@
                             </div>
                             <div class="col-md-6 mb-3">
                                 <div class="form-group ">
-                                    <label for="email" class="col-form-label">Email</label>
+                                    <label for="email" class="col-form-label">البريد الالكتروني</label>
                                     <input class="form-control @error('email') is-invalid @enderror"
                                            name="email"
                                            type="text"
@@ -51,7 +51,7 @@
                             </div>
                             <div class="col-md-6 mb-3">
                                 <div class="form-group callout callout-left-primary  ">
-                                    <label for="password">Password</label>
+                                    <label for="password">كلمة المرور</label>
                                     <input type="password"
                                            name="password"
                                            class="form-control @error('password') is-invalid @enderror"
@@ -66,7 +66,7 @@
                             </div>
                             <div class="col-md-6 mb-3">
                                 <div class="form-group callout callout-left-primary  ">
-                                    <label for="passwordConfirmation">Confirm Password</label>
+                                    <label for="passwordConfirmation">تأكيد كلمة المرور</label>
                                     <input type="password"
                                            name="password_confirmation"
                                            class="form-control @error('password_confirmation') is-invalid @enderror"
@@ -80,7 +80,7 @@
                             </div>
                             <div class="col-md-6 mb-3">
                                 <div class="form-group ">
-                                    <label for="phone_number" class="col-form-label">Phone Number</label>
+                                    <label for="phone_number" class="col-form-label">رقم الهاتف</label>
                                     <input class="form-control @error('phone_number') is-invalid @enderror"
                                            name="phone_number"
                                            type="text"
@@ -95,7 +95,7 @@
                             </div>
                             <div class="col-md-6 mb-3">
                                 <div class="form-group ">
-                                    <label for="status">Status</label>
+                                    <label for="status">حالة المستخدم</label>
                                     <select
                                         class="form-control  basic  @error('status') is-invalid @enderror"
                                         id="status"
@@ -116,7 +116,7 @@
 
                             <div class="col-md-12 mb-3">
                                 <div class="form-group callout callout-bottom-primary">
-                                    <label for="roles">Roles :</label>
+                                    <label for="roles">الدور :</label>
                                     <select
                                         class="form-control  basic  multiple @error('roles') is-invalid @enderror"
                                         name="roles[]"
